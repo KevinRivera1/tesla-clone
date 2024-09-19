@@ -1,0 +1,97 @@
+<style>
+  .hero {
+    height: 100vh;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+    padding-top: 6rem;
+  }
+
+  .hero__content {
+    position: relative;
+    z-index: 30;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hero__text h2 {
+    padding-top: 1rem;
+    font-size: 2.5rem;
+  }
+
+  .hero__text p {
+    font-size: 0.9rem;
+    padding: 1rem;
+  }
+
+  .hero__btn {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    flex-basis: 0;
+    justify-content: flex-end;
+    padding-bottom: 2rem;
+  }
+
+  .hero__btn a {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border: 0.125rem solid #fff;
+    border-radius: 0.5rem;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+  }
+
+  .hero__btn a:hover {
+    background: #fff;
+    color: black;
+  }
+
+  .hero__btn a:nth-last-child(2) {
+    background: blue;
+    border: 0.125rem solid blue;
+  }
+
+  .hero__btn a:nth-last-child(2):hover {
+    color: white;
+  }
+
+  .hero__img {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 10;
+  }
+
+  .hero__img .img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+</style>
+
+<section class="hero">
+  <div class="hero__img">
+    <img class="img" src="/images/model-y.avif" alt="hero imagen" />
+  </div>
+  <div class="hero__content">
+    <header class="hero__text">
+      <h2>Disfrute de Tesla</h2>
+      <p>
+        Programe una prueba de conduccion hoy mismo o solicite un presupuesto
+      </p>
+    </header>
+
+    <footer class="hero__btn">
+      <div>
+        <a href="#">Hacer Pedido</a>
+        <a href="#">Prueba de conducción</a>
+      </div>
+    </footer>
+  </div>
+</section>
