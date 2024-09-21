@@ -4,6 +4,7 @@ import Logo from "./Logo.astro";
 
 <style>
   .header {
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -39,16 +40,74 @@ import Logo from "./Logo.astro";
     flex: 1;
     flex-basis: 0;
   }
+
+  @media (max-width: 1024px) {
+    .header {
+      padding: 1rem 1.5rem;
+    }
+    .header nav {
+      display: none;
+    }
+    header .active {
+      position: fixed;
+      display: flex;
+      flex-direction: column;
+      background: white;
+      color: black;
+      top: 12rem;
+      left: 50%;
+      width: 90%;
+      transform: translate(-50%, -50%);
+      z-index: 50;
+    }
+
+    header .active a:hover {
+      background: #eeee;
+    }
+    header .active a:active {
+      background: #eeee;
+    }
+  }
 </style>
 
 <header class="header">
   <h1><a href="#"><Logo /></a></h1>
+
+  <button
+    id="btn-menu"
+    class="header__btn header__btn-movile lg:hidden"
+    aria-expanded="false"
+    aria-controls="nav1"
+  >
+    <svg
+      xmlns="
+    http:
+    www.w3.org
+    2000
+    svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      class="lucide lucide-align-justify"
+      ><line x1="3" x2="21" y1="6" y2="6"></line><line
+        x1="3"
+        x2="21"
+        y1="12"
+        y2="12"></line><line x1="3" x2="21" y1="18" y2="18"></line></svg
+    >
+  </button>
+
   <nav class="nav1">
-    <a href="/">Vehicles</a>
-    <a href="/about">Energy</a>
-    <a href="/blog">Charging</a>
-    <a href="/blog">Discover</a>
-    <a href="/blog">Shop</a>
+    <a href="#">Vehicles</a>
+    <a href="#">Energy</a>
+    <a href="#">Charging</a>
+    <a href="#">Discover</a>
+    <a href="#">Shop</a>
   </nav>
 
   <nav class="nav2">
@@ -108,3 +167,28 @@ import Logo from "./Logo.astro";
     >
   </nav>
 </header>
+
+<script type="module" is:inline>
+  const btnMovile = document.getElementById("btn-menu");
+  const nav1 = document.querySelector(".nav1");
+
+  btnMovile.addEventListener("click", () => {
+    const expanded =
+      btnMovile.getAttribute("aria-expanded") === "true" || false;
+    btnMovile.setAttribute("aria-expanded", !expanded);
+    nav1.classList.toggle("active");
+  });
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 1024) {
+      nav1.classList.remove("active");
+    }
+  });
+
+  document.addEventListener("click", (e) => {
+    if (!nav1.contains(e.target) && !btnMovile.contains(e.target)) {
+      nav1.classList.remove("active");
+      btnMovile.setAttribute("aria-expanded", false);
+    }
+  });
+</script>
