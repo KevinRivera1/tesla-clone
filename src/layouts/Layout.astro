@@ -1,4 +1,5 @@
 ---
+import imagenTag from "../../public/images/shot.png";
 interface Props {
   title: string;
   description: string;
@@ -22,7 +23,7 @@ const { title, description } = Astro.props;
     <meta property="og:url" content="https://tesla-clone-seven.vercel.app/" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content="/public/images/shot.png" />
+    <meta property="og:image" content={imagenTag.src} />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
@@ -32,7 +33,7 @@ const { title, description } = Astro.props;
     />
     <meta property="twitter:title" content={title} />
     <meta property="twitter:description" content={description} />
-    <meta property="twitter:image" content="/public/images/shot.png" />
+    <meta property="twitter:image" content={imagenTag.src} />
   </head>
   <body>
     <slot />
