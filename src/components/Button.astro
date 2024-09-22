@@ -1,0 +1,44 @@
+---
+interface Props {
+  link: string;
+  label: string;
+}
+
+const { link, label } = Astro.props;
+---
+
+<a href={link}>{label}</a>
+
+<style>
+  a {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    backdrop-filter: blur(0.625rem);
+    transition:
+      background 0.3s,
+      color 0.3s;
+  }
+
+  a:hover {
+    background: var(--blanco);
+    color: black;
+  }
+
+  a:first-child {
+    background: var(--button-bg-primary);
+    outline: 0.125rem solid var(--outline-btn-secondary);
+  }
+
+  a:first-child:hover {
+    color: var(--blanco);
+    background: var(--button-bg-secondary);
+    outline: 0.125rem solid var(--outline-bg-hover);
+  }
+  a:last-child {
+    outline: 0.125rem solid var(--outline-btn);
+  }
+</style>
