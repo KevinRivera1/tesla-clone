@@ -1,0 +1,62 @@
+:root {
+    --negro : #13151a;
+    --blanco: #e4e5e8;
+    --outline-btn:rgb(255, 255, 255);
+    --outline-btn-secondary:rgb(62, 106, 225);
+    --outline-bg-hover:rgb(11, 67, 224);
+    --button-bg-primary:rgb(62, 106, 225);
+    --button-bg-secondary:rgb(11, 67, 224);
+}
+
+* {
+    margin            : 0;
+    padding           : 0;
+    border            : 0;
+    -webkit-box-sizing: border-box;
+    box-sizing        : border-box;
+    vertical-align    : baseline;
+}
+
+img,
+picture,
+video,
+iframe,
+figure {
+    max-width         : 100%;
+    width             : 100%;
+    display           : block;
+    -o-object-fit     : cover;
+    object-fit        : cover;
+    -o-object-position: center center;
+    object-position   : center center;
+}
+
+a {
+    display        : block;
+    text-decoration: none;
+    color          : inherit;
+    font-size      : inherit;
+}
+
+p a {
+    display: inline;
+}
+
+html {
+    background     : var(--negro);
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height             : 100dvh;
+    font-size              : 100%;
+    font-family            : system-ui, sans-serif;
+    color                  : var(--blanco);
+    line-height            : 1.4em;
+    -webkit-hyphens        : auto;
+    -ms-hyphens            : auto;
+    hyphens                : auto;
+    font-smooth            : always;
+    -webkit-font-smoothing : antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
