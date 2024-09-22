@@ -1,5 +1,7 @@
 ---
+import '@src/styles/global.css';
 import imagenTag from "../../public/images/shot.png";
+
 interface Props {
   title: string;
   description: string;
@@ -39,59 +41,3 @@ const { title, description } = Astro.props;
     <slot />
   </body>
 </html>
-<style is:global>
-  :root {
-    --negro: #13151a;
-    --blanco: #e4e5e8;
-  }
-  * {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    vertical-align: baseline;
-  }
-
-  img,
-  picture,
-  video,
-  iframe,
-  figure {
-    max-width: 100%;
-    width: 100%;
-    display: block;
-    -o-object-fit: cover;
-    object-fit: cover;
-    -o-object-position: center center;
-    object-position: center center;
-  }
-
-  a {
-    display: block;
-    text-decoration: none;
-    color: inherit;
-    font-size: inherit;
-  }
-
-  p a {
-    display: inline;
-  }
-  html {
-    background: var(--negro);
-    scroll-behavior: smooth;
-  }
-  body {
-    min-height: 100dvh;
-    font-size: 100%;
-    font-family: system-ui, sans-serif;
-    color: var(--blanco);
-    line-height: 1.4em;
-    -webkit-hyphens: auto;
-    -ms-hyphens: auto;
-    hyphens: auto;
-    font-smooth: always;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-</style>
