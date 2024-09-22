@@ -1,4 +1,5 @@
 ---
+import Button from "@src/components/Button.astro";
 import Header from "@src/components/Header.astro";
 import Hero from "@src/components/Hero.astro";
 import Layout from "@src/layouts/Layout.astro";
@@ -15,21 +16,29 @@ import Layout from "@src/layouts/Layout.astro";
         image="/images/model-y.avif"
         title="Disfruta de Tesla"
         description="Aprovecha y gana una prueba de conducción gratuita"
-      />
+      >
+        <Button link="#" label="Más información" />
+        <Button link="#" label="Prueba de conducción" />
+      </Hero>
     </div>
     <div class="hero__section snap-center">
       <Hero
         image="/images/model-3.avif"
         title="Nuevos productos"
         description="Es hora de hacer tus sueños realidad"
-      />
+      >
+        <Button link="#" label="Más información" />
+        <Button link="#" label="Prueba de conducción" />
+      </Hero>
     </div>
     <div class="hero__section snap-center">
       <Hero
         image="/images/Cybertruck.avif"
         title="Nuevos productos"
         description="Es hora de hacer tus sueños realidad"
-      />
+      >
+        <Button link="#" label="Prueba de conducción" />
+      </Hero>
     </div>
   </main>
 </Layout>
